@@ -1,0 +1,17 @@
+{
+	"name": "React_Inkitt_test",
+	"short_name": "Inkitt_test",
+	"background_color": "#fff",
+	"theme_color": "#4A8FCC",
+	"description": "",
+	"lang": "en-US",
+	"icons": [{
+		"src": "/etc/assets/images/icon192.png",
+		"sizes": "192x192",
+		"type": "image/png"
+	}, {
+		"src": "/etc/assets/images/icon512.png",
+		"sizes": "512x512",
+		"type": "image/png"
+	}]
+}
