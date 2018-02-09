@@ -62,6 +62,7 @@
 		"nsp": "^3.1.0",
 		"nyc": "^11.4.1",
 		"postcss-cssnext": "^3.1.0",
+		"promise-polyfill": "^7.1.0",
 		"reactify": "^1.1.1",
 		"run-sequence": "^2.2.1",
 		"sw-precache": "^5.2.1",
