@@ -68,7 +68,6 @@ client/assets/TMP.csv
 #Web Storm configurationsz
 .idea/
 
-/client/**/dist/*
 /client/service-worker.js
 
 package-lock.json
