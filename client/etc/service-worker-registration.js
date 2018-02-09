@@ -6,7 +6,7 @@
 
     if ('serviceWorker' in navigator) {
         window.addEventListener('load', function() {
-            navigator.serviceWorker.register('/client/service-worker.js').then(function(reg) {
+            navigator.serviceWorker.register('/react_sample/client/service-worker.js').then(function(reg) {
                 reg.onupdatefound = function() {
                     // The updatefound event implies that reg.installing is set; see
                     // https://w3c.github.io/ServiceWorker/#service-worker-registration-updatefound-event
