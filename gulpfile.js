@@ -112,7 +112,7 @@
 		}
 	};
 
-	gulp.task("build-all", ["lint:server", "set-manifest"], function () {
+	gulp.task("build-all", ["lint:server"], function () {
 		fs.readdir("./client", function (err, files) {
 			files.forEach(function (file) {
 				let stat = fs.statSync(path.join("client"));
