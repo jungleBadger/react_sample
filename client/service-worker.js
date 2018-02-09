@@ -37,7 +37,7 @@
 /* eslint-disable indent, no-unused-vars, no-multiple-empty-lines, max-nested-callbacks, space-before-function-paren, quotes, comma-spacing */
 'use strict';
 
-var precacheConfig = [["/react_module/dist/css/style.css","a3bec31cef203db48e03adcb319acec9"]];
+var precacheConfig = [];
 var cacheName = 'sw-precache-v3-react_inkitt-' + (self.registration ? self.registration.scope : '');
 
 

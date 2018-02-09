@@ -215,10 +215,7 @@
 			"logger": gutil.log,
 			"handleFetch": isProd,
 			"staticFileGlobs": [
-				"./client/etc/libs/bulma/css/bulma.css",
-				"./client/etc/libs/bulma/css/bulma.css.map",
-				"./client/etc/libs/fontawesome/*.js",
-				"./client/**/dist/css/style.css"
+				"/react_sample/client/**/dist/css/style.css"
 			],
 			"stripPrefix": "./client"
 		}, callback);
