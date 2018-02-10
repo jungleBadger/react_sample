@@ -144,9 +144,10 @@
 		modulePath = currentContext ? currentContext : path.join("client", (argv.module || argv.m || currentContext || "main") + "_module");
 		browserifyInstance = browserify({
 			"entries": path.join(modulePath, "js/main.js"),
-			"noParse": ["react.js"],
 			"plugin": argv.w || argv.watch ? [watchify] : [],
 			"cache": {},
+			"extensions": [".jsx"],
+			require: ["react", "react-dom"],
 			"packageCache": {},
 			"debug": !isProd
 		}).transform("envify", {
@@ -155,6 +156,7 @@
 		})
 			.transform(babelify)
 			.transform(reactify)
+
 			.on("update", methods.bundleJS);
 		return methods.bundleJS();
 	});
