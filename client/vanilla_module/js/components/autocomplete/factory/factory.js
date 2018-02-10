@@ -17,7 +17,7 @@
 							resolve(countries.filter((country) => {
 								let found;
 								for (let prop in country) {
-									if (country.hasOwnProperty(prop)) {
+									if (country.hasOwnProperty(prop) && typeof country[prop] === "string") {
 										found = country[prop].indexOf(queryString) > -1;
 										if (found) {
 											return true;
@@ -39,7 +39,7 @@
 					let found;
 
 					for (let prop in result) {
-						if (result.hasOwnProperty(prop)) {
+						if (result.hasOwnProperty(prop) && typeof result[prop] === "string") {
 							found = result[prop].indexOf(queryString) > -1;
 							if (found) {
 								return true;

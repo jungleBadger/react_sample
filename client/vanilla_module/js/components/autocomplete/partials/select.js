@@ -16,7 +16,9 @@
 				if (isClosed) {
 					elements.get("ikt-autocomplete-select").classList.remove("is__hidden");
 				} else {
-					elements.get("ikt-autocomplete-select").classList.add("is__hidden");
+					setTimeout(() => {
+						elements.get("ikt-autocomplete-select").classList.add("is__hidden");
+					}, 300);
 				}
 			}
 		};
@@ -30,7 +32,6 @@
 			"setSelectClass": function () {
 				elements.get("ikt-autocomplete-select").classList.add("ikt-autocomplete-select");
 				elements.get("ikt-autocomplete-select").classList.add("is__hidden");
-
 				return this;
 			},
 			"setEvents": function (element) {
@@ -46,27 +47,26 @@
 				}
 			},
 			"buildOptionTile": function (key, value) {
-				console.log("building option tile");
 				let span = document.createElement("span");
-				let info_key = document.createElement("span");
 				let info_value = document.createElement("span");
-
-				info_key.appendChild(document.createTextNode(key));
 				info_value.appendChild(document.createTextNode(value));
 				span.classList.add("ikt-autocomplete-select-option-tile");
-				info_key.classList.add("ikt-autocomplete-select-option-tile-key");
 				info_value.classList.add("ikt-autocomplete-select-option-tile-value");
-				span.appendChild(info_key);
 				span.appendChild(info_value);
 				return span;
 			},
 			"buildOption": function (option = {}, index) {
 				let optionDiv = document.createElement("div");
 				this.setEvents(optionDiv);
+
+				if (option.selected) {
+					optionDiv.classList.add("is__selected");
+				}
+
 				optionDiv.classList.add("ikt-autocomplete-select-option");
 				optionDiv.setAttribute("data-id", index);
 				for (let prop in option) {
-					if (option.hasOwnProperty(prop)) {
+					if (option.hasOwnProperty(prop)&& typeof option[prop] === "string") {
 						optionDiv.appendChild(this.buildOptionTile(prop, option[prop]));
 					}
 				}

@@ -11,7 +11,8 @@
 			"lastUpdate": 0,
 			"queryResults": [],
 			"queryCache": [],
-			"openSelect": false
+			"openSelect": false,
+			"selectedCode": ""
 		};
 		return {
 			"get": function (prop) {

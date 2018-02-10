@@ -7,6 +7,7 @@
     const factory = require("./factory/factory");
     const inputElement = require("./partials/input");
 	const selectElement = require("./partials/select");
+	const resultElement = require("./partials/selectedOption");
 
     module.exports = function Constructor(params = {}) {
 		let configs = new Config(params);
@@ -26,7 +27,6 @@
 			"performQuery": function () {
 				factory.queryCountries(state.get("queryString"))
 					.then(result => {
-						console.log(result);
 						state.commit("queryResults", result);
 						state.commit("lastUpdate", Date.now());
 					})
@@ -80,19 +80,38 @@
 				console.log("blur")
 			},
 			"selectOption": function (option) {
-				console.log(option);
-			}
+				let shouldDeselect = false;
+				let found = false;
+				if (option.code === state.get("selectedCode").code) {
+					shouldDeselect = true;
+				}
+				state.commit("queryResults", state.get("queryResults").map(result => {
+					if (shouldDeselect) {
+						result.selected = false;
+					} else {
+						result.selected = (result.code === option.code);
+						if (result.selected) {
+							found = option;
+						}
+					}
+					return result;
+				}));
+
+				state.commit("selectedCode", found || "");
+			},
 		};
 
 		return (function () {
 			const input = inputElement(elements, configs);
 			const select = selectElement(elements, configs, state);
+			const result = resultElement(elements, configs, state);
 			input.events.keyUp = _methods.receiveInput;
 			input.events.focus = _methods.handleFocus;
 			input.events.blur = _methods.handleBlur;
 			select.events.click = _methods.selectOption;
 			state.registerDependency("queryResults", select.methods.renderOptions);
 			state.registerDependency("openSelect", select.methods.toggleSelect);
+			state.registerDependency("selectedCode", result.methods.renderResult);
 
 			return {configs, elements, input, select};
 		}());

@@ -8,7 +8,8 @@
 			anchorElement.classList.add("ikt-autocomplete");
 		}
 		let _elements = {
-			"ikt-autocomplete": anchorElement
+			"ikt-autocomplete": anchorElement,
+			"app-results": document.querySelector("#app-results")
 		};
 
 		return {

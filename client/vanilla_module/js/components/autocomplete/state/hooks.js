@@ -4,7 +4,8 @@
 	module.exports = function () {
 		let _hooks = {
 			"queryResults": [],
-			"openSelect": []
+			"openSelect": [],
+			"selectedCode": []
 		};
 		return {
 			"get": function (prop) {
