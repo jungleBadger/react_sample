@@ -2,11 +2,11 @@
   body > #app > main > #content-wrapper {
     flex-direction: column; }
     body > #app > main > #content-wrapper #app-search {
-      width: 100%;
+      width: 100% !important;
       height: 50%;
       text-align: center; }
     body > #app > main > #content-wrapper #app-results {
-      width: 100%;
+      width: 100% !important;
       height: 50%;
       text-align: center; } }
 

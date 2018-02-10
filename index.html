@@ -3,19 +3,48 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="manifest" href="/react_sample/client/etc/manifest.json">
+	<style>
+		html, body {width: 100%; height: 100%; display: block; padding: 0; margin: 0; box-sizing: border-box; overflow: hidden !important;}
+		body > #app {width: 100%; height: 100%; display: flex; flex-direction: column;}
+		body > #app > header {height: 70px; width: 100%; display: flex; align-items: center; padding: 20px; background-color: #41b883;}
+		body > #app > header .title a {text-decoration: none; color: white;}
+		body > #app > main {width: 100%; flex: 1; display: flex; flex-wrap: wrap; flex-direction: column;}
+		.hero-content {display: flex;align-items: center;justify-content: space-around;height: 300px;width: 100%;}
+	</style>
+	<link rel="stylesheet" href="./client/vanilla_module/dist/css/libs.css">
 	<title>React Inkitt Test</title>
 </head>
 <body>
-<div id="app">
-	<div>
-		<a href="/react_sample/client/vanilla_module/index.html">
-			Vanilla implementation
-		</a>
-		<a href="/react_sample/client/react_module/index.html">
-			React implementation
-		</a>
-	</div>
-</div>
+<section id="app">
+	<header class="header">
+		<h1 class="title">
+			<a href="https://junglebadger.github.io/react_sample" title="return to home">
+				Inkitt Test
+			</a>
+		</h1>
+	</header>
+	<main>
+		<section id="app-info hero is-primary">
+			<div class="hero-content">
 
+				<a
+					class="button is-large is-info"
+					title="go to vanilla implementation"
+					href="/react_sample/client/vanilla_module/index.html">
+					Vanilla implementation
+				</a>
+				<a
+					class="button is-large is-info"
+					title="go to React implementation"
+					href="/react_sample/client/react_module/index.html">
+					React implementation
+				</a>
+			</div>
+		</section>
+
+	</main>
+
+</section>
 </body>
 </html>
