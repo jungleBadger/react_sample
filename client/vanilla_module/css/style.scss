@@ -1,0 +1,37 @@
+.ikt-autocomplete {
+	width: 100%;
+	height: 100%;
+	box-sizing: border-box;
+	border: 1px solid gainsboro;
+	.ikt-autocomplete-input {
+		width: inherit;
+		height: inherit;
+	}
+	.ikt-autocomplete-select {
+		display: block;
+		width: inherit;
+		height: inherit;
+		.ikt-autocomplete-select-options {
+			width: inherit;
+			height: inherit;
+			.ikt-autocomplete-select-option {
+				width: inherit;
+				height: 40px;
+				transition: background-color 0.2s ease-out;
+				&:hover {
+					background-color: gainsboro;
+				}
+				&.is__selected {
+					background-color: green;
+				}
+				.ikt-autocomplete-select-option-tile {
+					height: inherit;
+				}
+			}
+		}
+
+		&.is__hidden {
+			display: none;
+		}
+	}
+}
