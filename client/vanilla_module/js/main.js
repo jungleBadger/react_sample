@@ -10,9 +10,12 @@
 		window.Promise = require("promise-polyfill");
 	}
 
+	require("@fortawesome/fontawesome");
+	require("@fortawesome/fontawesome-pro-light");
+
 	let Autocomplete = require("./components/autocomplete/autocomplete");
 	new Autocomplete({
-		"anchorReference": "#autocomplete",
+		"anchorReference": "#app-search-autocomplete",
 		"queryEndpoint": "url"
 	});
 
