@@ -12,13 +12,13 @@
 						resolve([]);
 					} else {
 						if (fieldToSearch) {
-							resolve(countries.filter(country => country[fieldToSearch].indexOf(queryString) > -1))
+							resolve(countries.filter(country => country[fieldToSearch].toLowerCase().indexOf(queryString.toLowerCase()) > -1))
 						} else {
 							resolve(countries.filter((country) => {
 								let found;
 								for (let prop in country) {
 									if (country.hasOwnProperty(prop) && typeof country[prop] === "string") {
-										found = country[prop].indexOf(queryString) > -1;
+										found = country[prop].toLowerCase().indexOf(queryString.toLowerCase()) > -1;
 										if (found) {
 											return true;
 										}
@@ -33,14 +33,14 @@
 		},
 		"queryCache": function (results = [], queryString = "", fieldToSearch = "") {
 			if (fieldToSearch) {
-				return results.filter(result => result[fieldToSearch].indexOf(queryString) > -1)
+				return results.filter(result => result[fieldToSearch].toLowerCase().indexOf(queryString.toLowerCase()) > -1)
 			} else {
 				return results.filter((result) => {
 					let found;
 
 					for (let prop in result) {
 						if (result.hasOwnProperty(prop) && typeof result[prop] === "string") {
-							found = result[prop].indexOf(queryString) > -1;
+							found = result[prop].toLowerCase().indexOf(queryString.toLowerCase()) > -1;
 							if (found) {
 								return true;
 							}
